@@ -37,8 +37,8 @@ int main(int argc, char** argv)
     cv::Mat cameraMatrix_left, cameraMatrix_right;
     initCalibration(calibration_file, image_size, map_left_x, map_left_y, map_right_x, map_right_y, cameraMatrix_left, cameraMatrix_right);
 
-    std::cout << " Camera Matrix L: \n" << cameraMatrix_left << std::endl << std::endl;
-    std::cout << " Camera Matrix R: \n" << cameraMatrix_right << std::endl << std::endl;
+    std::cout << " Projection Matrix L: \n" << cameraMatrix_left << std::endl << std::endl;
+    std::cout << " Projection Matrix R: \n" << cameraMatrix_right << std::endl << std::endl;
 
     char key = 'r';
 

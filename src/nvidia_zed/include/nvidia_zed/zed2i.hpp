@@ -4210,6 +4210,7 @@ bool initCalibration(std::string calibration_file, cv::Size2i image_size, cv::Ma
     T_[0] = camerareader.getValue("stereo:baseline", 0.0f);
     T_[1] = camerareader.getValue("stereo:ty_" + resolution_str, 0.f);
     T_[2] = camerareader.getValue("stereo:tz_" + resolution_str, 0.f);
+    T_[0] *= -0.001;
 
     // Get left parameters
     float left_cam_cx = camerareader.getValue("left_cam_" + resolution_str + ":cx", 0.0f);
@@ -4269,7 +4270,8 @@ bool initCalibration(std::string calibration_file, cv::Size2i image_size, cv::Ma
     //Precompute maps for cv::remap()
     initUndistortRectifyMap(cameraMatrix_left, distCoeffs_left, R1, P1, image_size, CV_32FC1, map_left_x, map_left_y);
     initUndistortRectifyMap(cameraMatrix_right, distCoeffs_right, R2, P2, image_size, CV_32FC1, map_right_x, map_right_y);
-
+std::cout << map_left_x.size() << std::endl;
+std::cout << map_left_y.size() << std::endl;
     cameraMatrix_left = P1;
     cameraMatrix_right = P2;
 
