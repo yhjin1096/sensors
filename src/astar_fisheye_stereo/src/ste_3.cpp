@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
     ste_3 astar;
-    std::string file_name = argc == 2 ? argv[1] : "/home/cona/yhj/sensor/src/astar_fisheye_stereo/ste-3_stereo.yml";
+    std::string file_name = argc == 2 ? argv[1] : "/home/cona/yhj/sensors/src/astar_fisheye_stereo/ste-3_stereo.yml";
     astar.LoadParameters(file_name);
     astar.InitRectifyMap();
 
