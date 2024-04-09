@@ -27,7 +27,7 @@
 
 int main(int argc, char** argv)
 {
-    cv::Size2i image_size = cv::Size2i(1920, 1080);
+    cv::Size2i image_size = cv::Size2i(1280, 720);
 
     std::string calibration_file = "/home/cona/yhj/sensors/src/nvidia_zed/SN33204635.conf";
     
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
         cv::imshow("right RECT", right_rect);
         cv::imshow("left RECT", left_rect);
 
-        key = cv::waitKey(30);
+        key = cv::waitKey(1);
     }
     return 0;
 }
