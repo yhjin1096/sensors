@@ -3,6 +3,12 @@
 ## astar camera
 https://github.com/astar-ai/calicam
 
-## nvidia zed2i
+## stereolabs zed2i
 https://github.com/stereolabs/zed-opencv-native/tree/master
+
 https://support.stereolabs.com/hc/en-us/articles/360007497173-What-is-the-calibration-file
+
+## Luxonis oak-1 w
+https://github.com/stereolabs/zed-opencv-native/tree/master
+
+https://shop.luxonis.com/products/oak-1-w?variant=44051403571423
