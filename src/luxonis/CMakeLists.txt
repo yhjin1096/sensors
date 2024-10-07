@@ -5,12 +5,14 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 # set(OpenCV_DIR /home/cona/open_library/opencv-3.4.16/install/share/OpenCV)
-set(DepthAI_DIR /home/cona/coga-robotics/depthai-core/build)
+set(depthai_DIR /home/cona/coga-robotics/depthai-core/install/lib/cmake/depthai)
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 find_package(OpenCV REQUIRED)
-find_package(depthai CONFIG REQUIRED)
+# find_package(depthai CONFIG REQUIRED)
+find_package(depthai REQUIRED)
 
 catkin_package(
  INCLUDE_DIRS include
@@ -23,11 +25,13 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  # ${depthai_INCLUDE_DIRS}
 )
 
 link_libraries(
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
+  # ${depthai_LIBRARIES}
   depthai::opencv
 )
 
