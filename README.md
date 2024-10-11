@@ -9,7 +9,6 @@ https://github.com/stereolabs/zed-opencv-native/tree/master
 https://support.stereolabs.com/hc/en-us/articles/360007497173-What-is-the-calibration-file
 
 ## Luxonis oak-1 w
-https://github.com/stereolabs/zed-opencv-native/tree/master
 
 https://github.com/luxonis/depthai-core
 
