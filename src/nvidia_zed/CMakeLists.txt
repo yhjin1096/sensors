@@ -10,7 +10,13 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   image_transport
 )
+
 # find_package(OpenCV REQUIRED)
+
+# for zed2i_sdk_pub
+find_package(ZED 3 REQUIRED)
+find_package(CUDA ${ZED_CUDA_VERSION} REQUIRED)
+#
 
 catkin_package(
  INCLUDE_DIRS include
@@ -23,6 +29,11 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  
+  # for zed2i_sdk_pub
+  ${ZED_INCLUDE_DIRS}
+  ${CUDA_INCLUDE_DIRS}
+  #
 )
 
 link_libraries(
@@ -30,5 +41,19 @@ link_libraries(
   ${OpenCV_LIBRARIES}
 )
 
+# for zed2i_sdk_pub
+link_directories(
+  ${ZED_LIBRARY_DIR}
+  ${CUDA_LIBRARY_DIRS}
+  ${OpenCV_LIBRARY_DIRS}
+)
+#
+
 add_executable(zed2i src/zed2i.cpp)
 add_executable(zed2i_pub src/zed2i_pub.cpp)
+add_executable(zed2i_sdk_pub src/zed2i_sdk_pub.cpp)
+
+# for zed2i_sdk_pub
+SET(ZED_LIBS ${ZED_LIBRARIES} ${CUDA_CUDA_LIBRARY} ${CUDA_CUDART_LIBRARY})
+TARGET_LINK_LIBRARIES(zed2i_sdk_pub ${ZED_LIBS} ${OpenCV_LIBRARIES})
+#
