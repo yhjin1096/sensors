@@ -50,7 +50,7 @@ int main(int argc, char** argv)
 
     char key = 'r';
 
-    cv::VideoCapture cap(0);
+    cv::VideoCapture cap(4);
     if (!cap.isOpened())
         return -1;
     cap.grab();
@@ -70,15 +70,18 @@ int main(int argc, char** argv)
         left_raw = frame(cv::Rect(0, 0, frame.cols / 2, frame.rows));
         right_raw = frame(cv::Rect(frame.cols / 2, 0, frame.cols / 2, frame.rows));
         // Display images
-        cv::imshow("left RAW", left_raw);
+        // cv::imshow("left RAW", left_raw);
 
-        // cv::remap(left_raw, left_rect, map_left_x, map_left_y, cv::INTER_LINEAR);
+        cv::remap(left_raw, left_rect, map_left_x, map_left_y, cv::INTER_LINEAR);
         // cv::remap(right_raw, right_rect, map_right_x, map_right_y, cv::INTER_LINEAR);
 
         // cv::imshow("right RECT", right_rect);
-        // cv::imshow("left RECT", left_rect);
+        cv::imshow("left RECT", left_rect);
 
-        msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", left_raw).toImageMsg();
+        std_msgs::Header tmp_header;
+        tmp_header.stamp = ros::Time::now();
+        tmp_header.frame_id = "zed2i";
+        msg = cv_bridge::CvImage(tmp_header, "bgr8", left_raw).toImageMsg();
 
         pub.publish(msg);
 
