@@ -15,3 +15,11 @@ https://support.stereolabs.com/hc/en-us/articles/360007497173-What-is-the-calibr
 https://github.com/luxonis/depthai-core
 
 https://shop.luxonis.com/products/oak-1-w?variant=44051403571423
+
+## FLIR ##
+
+https://github.com/ros-drivers/flir_camera_driver/tree/noetic-devel
+
+https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/
+
+https://www.teledynevisionsolutions.com/ko-kr/support/support-center/application-note/iis/using-ros-with-spinnaker/
